@@ -1,5 +1,5 @@
 {
-  "name": "duva",
+  "name": "duva-mail",
   "version": "0.0.1",
   "description": "Official Duva client library (transactional email API hosted in Canada). Name reserved: not released yet.",
   "main": "index.js",
