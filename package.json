@@ -1,0 +1,30 @@
+{
+  "name": "duva",
+  "version": "0.0.1",
+  "description": "Official Duva client library (transactional email API hosted in Canada). Name reserved: not released yet.",
+  "main": "index.js",
+  "license": "MIT",
+  "homepage": "https://duva.ca",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duva-mail/duva-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/duva-mail/duva-node/issues"
+  },
+  "keywords": [
+    "duva",
+    "email",
+    "transactional-email",
+    "api"
+  ],
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "author": "9573-4562 Québec inc."
+}
