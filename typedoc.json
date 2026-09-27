@@ -1,0 +1,8 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "name": "Duva for Node.js",
+  "readme": "README.md",
+  "excludePrivate": true,
+  "excludeInternal": true
+}

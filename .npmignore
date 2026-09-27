@@ -1,0 +1,11 @@
+src/
+test/
+scripts/
+generated/
+conformance/
+tsup.config.ts
+tsconfig.json
+vitest.config.ts
+eslint.config.js
+typedoc.json
+.github/

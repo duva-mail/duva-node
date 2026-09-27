@@ -1,8 +1,8 @@
 {
   "name": "duva-mail",
-  "version": "0.0.1",
-  "description": "Official Duva client library (transactional email API hosted in Canada). Name reserved: not released yet.",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Official Duva client library (transactional email API hosted in Canada).",
+  "type": "module",
   "license": "MIT",
   "homepage": "https://duva.ca",
   "repository": {
@@ -16,15 +16,49 @@
     "duva",
     "email",
     "transactional-email",
-    "api"
+    "api",
+    "webhooks"
   ],
-  "files": [
-    "index.js",
-    "README.md",
-    "LICENSE"
-  ],
+  "author": "9573-4562 Québec inc.",
   "engines": {
     "node": ">=22"
   },
-  "author": "9573-4562 Québec inc."
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "generate": "openapi-typescript https://duva.ca/openapi.json --default-non-nullable false -o generated/openapi.d.ts",
+    "generate:local": "openapi-typescript ../duva/docs/openapi.json --default-non-nullable false -o generated/openapi.d.ts",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:conformance": "node scripts/fetch-conformance.mjs && vitest run test/conformance",
+    "lint": "eslint src test",
+    "docs": "typedoc",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@types/node": "^22.10.0",
+    "eslint": "^9.15.0",
+    "openapi-typescript": "^7.13.0",
+    "tsup": "^8.3.0",
+    "typedoc": "^0.27.0",
+    "typescript": "5.8.3",
+    "typescript-eslint": "^8.15.0",
+    "vitest": "^2.1.0"
+  }
 }
